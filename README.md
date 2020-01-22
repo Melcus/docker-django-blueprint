@@ -3,6 +3,8 @@
 ```shell
 - Django>=3.0.2,<3.1.0
 - djangorestframework>=3.11.0,<3.12.0
+- Mysql 8
+- Python 3.9
 ``` 
 
 ### For existing project
