@@ -16,6 +16,19 @@ services:
     networks:
       - backend
 
+  mysql:
+    container_name: template_mysql
+    build: ./docker/mysql/
+    env_file: docker/mysql/conf/env.yml
+    ports:
+      - "3620:3306"
+    volumes:
+      - template_mysql:/data/mysql
+    networks:
+      - backend
+
+volumes:
+  template_mysql:
 
 networks:
   backend:
