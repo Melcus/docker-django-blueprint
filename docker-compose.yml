@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  application:
+    image: template_root
+    container_name: template_root
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8345:8000"
+    volumes:
+      - ./src:/app:cached
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - backend
+
+
+networks:
+  backend:
